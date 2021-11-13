@@ -3,54 +3,63 @@ const fs = require('fs');
 
 inquirer.prompt([
     {
-        type: 'input',
         message: 'What is your project title?',
+        type: 'input',
         name: 'title'
     },
     {
-        type: 'input',
         message: 'Enter your description: ',
+        type: 'input',
         name: 'description'
     },
     {
-        type: 'input',
         message: 'Enter your installation instructions:',
         default: 'npm i',
+        type: 'input',
         name: 'installation'
     },
     {
-        type: 'input',
         message: 'Enter your usage information: ',
+        type: 'input',
         name: 'usage'
     },
     {
-        type: 'input',
         message: 'Enter your contribution guidelines: ',
+        type: 'input',
         name: 'contribution'
     },
     {
-        type: 'input',
         message: 'Enter your test instructions: ',
         default: 'node index.js',
+        type: 'input',
         name: 'test'
     },
     {
         type: 'list',
-      choices:['ISC','MIT', 'Apache 2.0', 'Boost 1.0', 'None'],
-      message: 'What license are you using?',
-      name: 'license',
+        choices:['ISC','MIT', 'Apache 2.0', 'Boost 1.0', 'None'],
+        message: 'What license are you using?',
+        name: 'license',
     },
     {
-        type: 'input',
         message: 'Enter your github username: ',
+        type: 'input',
         name: 'github'
     },
     {
-        type: 'input',
         message: 'Enter your email: ',
+        type: 'input',
         name: 'email',
     },
 ]).then((data) => {
-    let license;
-    let link;
-    switch (data.license) {
+    const string = `
+    
+# ${data.title}
+${license}
+## Description
+${data.description}
+\
+`
+    fs.writeFile("README.md",  string, (err) =>
+    err? console.error(err) : console.log("created!")
+)
+})

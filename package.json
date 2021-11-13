@@ -1,14 +1,22 @@
 {
-  "name": "homework",
+  "name": "homework9",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hunter-Zandri/homework-week9"
+  },
   "author": "Hunter Zandri",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hunter-Zandri/homework-week9"
+  },
+  "homepage": "https://github.com/Hunter-Zandri/homework-week9",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^8.2.0"
   }
 }
